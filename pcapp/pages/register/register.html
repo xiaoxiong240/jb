@@ -1,0 +1,50 @@
+<div class="register">
+	<form class="register-form" name="registerForm">
+		<div class="group">
+			<div class="title">手机号</div>
+			<input type="text" name="telephone" ng-model="registerData.telephone" required ng-pattern="/^1\d{10}$/" ng-blur="checkTelephone()"/>
+			<div class="btn button" ng-disabled="registerForm.telephone.$invalid || captchaStatus" ng-click="getCaptcha()">{{captchaButton}}</div>
+		</div>
+		<div class="group">
+			<div class="title">验证码</div>
+			<input type="text" name="captcha" ng-model="registerData.captcha" ng-pattern="/^\d{4}$/" required ng-focus="captchaFocusStatus = true"/>
+			<div class="register-alert" ng-show="captchaFocusStatus && registerForm.captcha.$error.required">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">验证码不能为空</div>
+			</div>
+			<div class="register-alert" ng-show="captchaFocusStatus && !registerForm.captcha.$error.required && registerForm.captcha.$error.pattern">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">验证码格式不正确</div>
+			</div>
+		</div>
+		<div class="group">
+			<div class="title">设置密码</div>
+			<input type="text" name="password" ng-model="registerData.password" ng-pattern="/^[a-zA-Z0-9]{6,}$/" required ng-focus="passwordFocusStatus = true"/>
+			<div class="register-alert" ng-show="passwordFocusStatus && registerForm.password.$error.required">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">密码不能为空</div>
+			</div>
+			<div class="register-alert" ng-show="passwordFocusStatus && !registerForm.password.$error.required && registerForm.password.$error.pattern">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">密码要求字母或者数字的组合，最少不低于6位</div>
+			</div>
+		</div>
+		<div class="group">
+			<div class="title">重新输入密码</div>
+			<input type="text" name="repassword" ng-model="registerData.repassword" required ng-pattern="/^[a-zA-Z0-9]{6,}$/" ng-focus="repasswordFocusStatus = true"/>
+			<div class="register-alert" ng-show="repasswordFocusStatus && registerData.repassword != registerData.password">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">两次密码不一致</div>
+			</div>
+		</div>
+	</form>
+	<div class="agreement">
+		<checkbox class="checkbox-normal" ng-model="agreementStatus" ng-init="agreementStatus = true"></checkbox>
+		<div class="agreement-content">
+			我已同意
+			<a target="_blank" href="#/agreement/register">《合作伙伴管理协议》</a>
+		</div>
+	</div>
+	<div class="btn button button-register" ng-click="register()" ng-disabled="!agreementStatus || registerForm.$invalid || registerData.repassword != registerData.password" ng-bind-html="registerButton"></div>
+	<a class="bottom-line" href="#/login">已经帐号&nbsp;请登录</a>
+</div>

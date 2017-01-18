@@ -1,0 +1,20 @@
+<div class="index-page">
+    <div class="login">
+        <img src="public/images/logo1.png" />
+        <form class="form-login" name="loginForm">
+            <div class="group">
+                <div class="title">手机号</div>
+                <input type="text" name="telephone" ng-model="loginData.telephone" required ng-pattern="/^1\d{10}$/"/>
+            </div>
+            <div class="group">
+                <div class="title">密码</div>
+                <input type="password" name="password" ng-model="loginData.password" required ng-pattern="/^[a-zA-Z0-9]{6,}$/"/>
+            </div>
+        </form>
+        <div class="btn button button-login" ng-click="login()" ng-disabled="loginForm.telephone.$error.required || loginForm.password.$error.required" ng-bind-html="loginButton"></div>
+        <div class="bottom-link">
+            <a class="pull-left" href="#/password">忘记密码</a>
+            <a class="pull-right" href="#/register">还没有帐户，马上注册</a>
+        </div>
+    </div>
+</div>

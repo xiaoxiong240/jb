@@ -1,0 +1,43 @@
+.publish-page {
+	width: 100%;
+	padding: 30px;
+}
+.publish-page .publish-title {
+	height: 28px;
+	line-height: 22px;
+	font-size: 16px;
+	color: #333333;
+	padding-bottom: 4px;
+	border-bottom: 2px solid #000000;
+}
+.publish-page .publish-title .dot {
+	width: 10px;
+	height: 10px;
+	margin-top: 6px;
+	margin-right: 6px;
+	border-radius: 50%;
+	background-color: #333333;
+}
+.publish-page .line {
+	height: 28px;
+}
+.publish-page .line .label {
+	float: left;
+	width: 100px;
+	text-align: left;
+	padding: 0;
+	color: #333333;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 28px;
+}
+.publish-page .line .input {
+	float: left;
+	width: 630px;
+}
+.publish-page .line .input input[name="warehouseName"] {
+	width: 630px;
+}
+.publish-page input::-webkit-input-placeholder {
+
+}

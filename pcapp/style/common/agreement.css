@@ -1,0 +1,21 @@
+.agreement-page {
+	width: 1000px;
+	margin: auto;
+}
+.agreement-page .header img {
+	margin-top: -10px;
+}
+.agreement-page .header .title {
+	line-height: 70px;
+	font-size: 30px;
+	color: #a3a8aa;
+}
+.agreement-page .body {
+	padding-bottom: 60px;
+}
+.agreement-page .body .title {
+	text-align: center;
+}
+.agreement-page h3 {
+	font-size: 18px;
+}

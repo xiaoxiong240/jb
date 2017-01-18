@@ -1,0 +1,115 @@
+.home-page .header {
+	width: 100%;
+	height: 70px;
+	background-color: #4a3c3c;
+}
+.home-page .content {
+	position: relative;
+	width: 1000px;
+	margin: 0 auto;
+	z-index: 1001;
+}
+.home-page .content img {
+	margin-top: 22.5px;
+}
+.home-page .content .title {
+	margin-top: 20px;
+	margin-left: 9px;
+	line-height: 30px;
+	font-size: 22px;
+	color: #ff9713;
+}
+.home-page .content .exit {
+	margin-top: 40px;
+	line-height: 20px;
+	font-size: 14px;
+	color: #ffffff;
+	cursor: pointer;
+}
+.home-page .content .exit:hover {
+	color: #ff9713;
+}
+.home-page .content .user {
+	margin-top: 40px;
+	margin-right: 20px;
+	line-height: 20px;
+	font-size: 14px;
+	color: #ffffff;
+}
+.home-page .body {
+	position: absolute;
+	width: 100%;
+	min-height: 100vh;
+	top: 0;
+}
+.home-page .body .body-outer {
+	position: relative;
+	width: 1000px;
+	min-height: 100vh;
+	margin: auto;
+}
+.home-page .body .body-inner {
+	position: absolute;
+	top: 90px;
+	width: 1000px;
+	bottom: 10px;
+	box-shadow: 0 1px 10px 0 rgba(0, 0, 0, .5);
+}
+.home-page .body .sider {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 180px;
+	background-color: #332c2c;
+}
+.home-page .body .content {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 820px;
+}
+.home-page .panel-group {
+	margin: 0;
+	margin-top: 20px;
+}
+.home-page .panel-group .panel {
+	box-shadow: none;
+	border: none;
+	background-color: transparent;
+}
+.home-page .panel-default>.panel-heading {
+	background: none;
+	padding: 10px 0 10px 24px;
+	border: none;
+}
+.home-page .panel-title {
+	line-height: 25px;
+	font-size: 18px;
+	color: #c0a8a8;
+}
+.home-page .panel-group .panel-heading+.panel-collapse .panel-body {
+	border: none;
+	padding: 0;
+}
+.home-page .panel-title>a:hover, .home-page .panel-title>a:link, .home-page .panel-title>a:visited, .home-page .panel-title>a:active {
+	text-decoration:none;
+}
+.home-page .panel-title .triangle {
+	position: absolute;
+	margin-top: 8.5px;
+	margin-left: 8px;
+}
+.home-page .panel-body .item {
+	height: 40px;
+	padding: 10px 0 10px 34px;
+	line-height: 20px;
+	font-size: 14px;
+	color: #ffffff;
+	cursor: pointer;
+}
+.home-page .panel-body .item.active, .home-page .panel-body .item:hover {
+	color: #ff9713;
+	background-color: #4e4040;
+}

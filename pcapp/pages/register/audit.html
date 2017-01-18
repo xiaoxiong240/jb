@@ -1,0 +1,18 @@
+<div class="audit">
+	<div class="audit-ing" ng-show="auditStatus == 'underway'">
+		<div class="title">
+			<span class="iconfont icon-clock"></span>
+			资料审核中......
+		</div>
+		<div class="desc">审核大概会需要3个工作日，请耐心等待，谢谢！</div>
+		<div class="desc">审核结果我们会通过短信告知您！</div>
+	</div>
+	<div class="audit-fail" ng-show="auditStatus == 'fail'">
+		<div class="title">
+			<span class="iconfont icon-remove"></span>
+			审核不通过
+		</div>
+		<div class="desc">{{auditDesc}}</div>
+		<div class="btn button button-audit" ng-bind-html="auditFailButton" ng-click="resubmission()">修改资料&nbsp;重新提交审核</div>
+	</div>
+</div>

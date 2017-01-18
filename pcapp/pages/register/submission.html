@@ -1,0 +1,125 @@
+<div class="submission">
+	<form class="submission-form" name="submissionForm">
+		<div class="group">
+			<div class="title"><span class="star">*</span>公司全称</div>
+			<input type="text" name="companyName" ng-model="submissionData.companyName" ng-pattern="/^[\u4e00-\u9fa5]{1,30}$/" required ng-focus="companyNameFocusStatus = true"/>
+			<div class="register-alert" ng-show="companyNameFocusStatus && submissionForm.companyName.$error.required">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">公司全称不能为空</div>
+			</div>
+			<div class="register-alert" ng-show="companyNameFocusStatus && !submissionForm.companyName.$error.required && submissionForm.companyName.$error.pattern">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">公司全称不超过30个汉字</div>
+			</div>
+		</div>
+		<div class="group">
+			<div class="title"><span class="star">*</span>统一社会信用代码</div>
+			<input type="text" name="creditCode" ng-model="submissionData.creditCode" ng-pattern="/^[0-9a-zA-Z]{18}$/" required ng-focus="creditCodeFocusStatus = true"/>
+			<div class="register-alert" ng-show="creditCodeFocusStatus && submissionForm.creditCode.$error.required">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">统一社会信用代码不能为空</div>
+			</div>
+			<div class="register-alert" ng-show="creditCodeFocusStatus && !submissionForm.creditCode.$error.required && submissionForm.creditCode.$error.pattern">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">统一社会信用代码不正确</div>
+			</div>
+		</div>
+		<div class="group">
+			<div class="title"><span class="star">*</span>法定代表人</div>
+			<input type="text" name="legalRepresentative" ng-model="submissionData.legalRepresentative" ng-pattern="/^[\u4e00-\u9fa5]{1,5}$/" required ng-focus="legalRepresentativeFocusStatus = true"/>
+			<div class="register-alert" ng-show="legalRepresentativeFocusStatus && submissionForm.legalRepresentative.$error.required">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">法定代表人不能为空</div>
+			</div>
+			<div class="register-alert" ng-show="legalRepresentativeFocusStatus && !submissionForm.legalRepresentative.$error.required && submissionForm.legalRepresentative.$error.pattern">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">法定代表人不超过5个汉字</div>
+			</div>
+		</div>
+		<div class="group">
+			<div class="title"><span class="star">*</span>营业期限</div>
+			<input type="text" name="startDate" class="datepicker" datepicker-popup="yyyy-MM-dd" ng-model="dt.from.date" is-open="dt.from.opened" max-date="dt.to.date" datepicker-options="dateOptions" current-text="今天" clear-text="取消" close-text="关闭" ng-click="open(dt.from)" ng-required="true"/><div class="iconfont icon-calendar" ng-click="openOther(dt.from, $event)"></div>
+			<div class="contact">至</div>
+			<input type="text" style="margin-left: 0;" name="endDate" class="datepicker" datepicker-popup="yyyy-MM-dd" ng-model="dt.to.date" is-open="dt.to.opened" min-date="dt.from.date > today ? dt.from.date : today" datepicker-options="dateOptions" current-text="今天" clear-text="取消" close-text="关闭" ng-click="open(dt.to)" ng-required="true"/><div class="iconfont icon-calendar" ng-click="openOther(dt.to, $event)"></div>
+			<div class="register-alert" ng-show="dateFocusStatus && submissionForm.startDate.$error.required">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">营业期限开始日期不能为空</div>
+			</div>
+			<div class="register-alert" ng-show="dateFocusStatus && !submissionForm.startDate.$error.required && submissionForm.endDate.$error.required">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">营业期限结束日期不能为空</div>
+			</div>
+		</div>
+		<div class="group">
+			<div class="title"><span class="star">*</span>开户银行</div>
+			<input type="text" name="bankName" ng-model="submissionData.bankName" required ng-maxlength="30" ng-focus="bankNameFocusStatus = true"/>
+			<div class="register-alert" ng-show="bankNameFocusStatus && submissionForm.bankName.$error.required">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">开户银行不能为空</div>
+			</div>
+			<div class="register-alert" ng-show="bankNameFocusStatus && !submissionForm.bankName.$error.required && submissionForm.bankName.$error.maxlength">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">开户银行名称过长</div>
+			</div>
+		</div>
+		<div class="group">
+			<div class="title"><span class="star">*</span>银行账户</div>
+			<input type="text" name="bankAccount" ng-model="submissionData.bankAccount" required ng-pattern="/^\d{1,19}$/" ng-focus="bankAccountFocusStatus = true"/>
+			<div class="register-alert" ng-show="bankAccountFocusStatus && submissionForm.bankAccount.$error.required">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">银行账户不能为空</div>
+			</div>
+			<div class="register-alert" ng-show="bankAccountFocusStatus && !submissionForm.bankAccount.$error.required && submissionForm.bankName.$error.pattern">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">银行账户不正确</div>
+			</div>
+		</div>
+		<div class="group">
+			<div class="title"><span class="star">*</span>常用联系人</div>
+			<input type="text" name="frequentContact" ng-model="submissionData.frequentContact" required ng-maxlength="30" ng-focus="frequentContactFocusStatus = true"/>
+			<div class="register-alert" ng-show="frequentContactFocusStatus && submissionForm.frequentContact.$error.required">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">常用联系人不能为空</div>
+			</div>
+			<div class="register-alert" ng-show="frequentContactFocusStatus && !submissionForm.frequentContact.$error.required && submissionForm.frequentContact.$error.maxlength">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">常用联系人名称过长</div>
+			</div>
+		</div>
+		<div class="group">
+			<div class="title"><span class="star">*</span>联系方式</div>
+			<input type="text" name="contactTelephone" ng-model="submissionData.contactTelephone" required ng-pattern="/^1\d{10}$/" ng-focus="contactTelephoneFocusStatus = true"/>
+			<div class="register-alert" ng-show="contactTelephoneFocusStatus && submissionForm.contactTelephone.$error.required">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">联系方式不能为空</div>
+			</div>
+			<div class="register-alert" ng-show="contactTelephoneFocusStatus && !submissionForm.contactTelephone.$error.required && submissionForm.contactTelephone.$error.pattern">
+				<div class="alert-symbol">!</div>
+				<div class="alert-content">联系方式手机号格式不正确</div>
+			</div>
+		</div>
+		<div class="group group-image">
+			<div class="title"><span class="star">*</span>营业执照</div>
+			<div class="image-select">
+				<div class="image-plus" ngf-select="onFileSelect($files)" ngf-pattern="'image/*'" ngf-max-size="4MB" ngf-multiple="false" ng-model="selectingImage" ng-show="!selectImage">
+					<span class="iconfont icon-plus"></span>
+				</div>
+				<div class="image-selected" ng-show="selectImage">
+					<img class="select-image" ngf-src="selectImage" style="width: 120px;"/>
+					<div class="select-button" ngf-select="onFileSelect($files)" ngf-pattern="'image/*'" ngf-max-size="3MB" ngf-multiple="false" ng-model="selectingImage">重新选择</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="image-content">图片格式:JPG、JPEG、PNG、GIF</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</form>
+	<div class="agreement" style="margin-top: 38px;">
+		<checkbox class="checkbox-normal" ng-model="agreementStatus" ng-init="agreementStatus = true"></checkbox>
+		<div class="agreement-content">
+			我已同意
+			<a target="_blank" href="#/agreement/submission">《合作伙伴管理协议》</a>
+		</div>
+	</div>
+	<div class="btn button button-submission" ng-click="register()" ng-disabled="!agreementStatus || submissionForm.$invalid || !submissionData.businessLicense" ng-bind-html="submissionButton"></div>
+</div>

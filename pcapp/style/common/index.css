@@ -1,0 +1,141 @@
+.index-page {
+	background-image: url('../public/images/login.jpg');
+	background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.index-page .login, .index-page .password {
+	position: relative;
+	z-index: 1001;
+	width: 480px;
+	margin: auto;
+	border-radius: 4px;
+	background: #ffffff;
+}
+.index-page img {
+	margin-top: 32px;
+	margin-left: 160px;
+}
+.index-page .form-login {
+	margin-top: 31px;
+}
+.index-page .group {
+	height: 40px;
+	line-height: 38px;
+	margin-top: 26px;
+}
+.index-page .group .title {
+	float: left;
+	width: 91px;
+	font-size: 14px;
+	color: #333333;
+	text-align: right;
+}
+.index-page .group input {
+	float: left;
+	width: 320px;
+	border: 1px solid #cccccc;
+	margin-left: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.index-page .button-login {
+	width: 320px;
+	height: 52px;
+	line-height: 52px;
+	margin-left: 111px;
+	margin-top: 30px;
+	padding: 0;
+	font-size: 18px;
+	color: #ffffff;
+	text-align: center;
+	border-radius: 4px;
+	background-color: #ff9713;
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	display:box;
+	box-pack:center;
+	box-align:center;
+}
+.index-page .button-login[disabled] {
+	background-color: #333333;
+}
+.index-page .bottom-link {
+	margin-top: 8px;
+	margin-left: 111px;
+	margin-bottom: 47px;
+	width: 320px;
+	height: 20px;
+	line-height: 20px;
+}
+.index-page .bottom-link a {
+	color: #333333;
+	font-size: 14px;
+}
+.index-page .bottom-link a:hover {
+	color: #428bca;
+}
+.index-page .password .group .title {
+	width: 104px;
+	height: 36px;
+	line-height: 34px;
+}
+.index-page .password .group input {
+	width: 230px;
+	height: 36px;
+}
+.index-page .button-password {
+	width: 230px;
+	height: 52px;
+	line-height: 52px;
+	margin-left: 124px;
+	margin-top: 30px;
+	margin-bottom: 37px;
+	padding: 0;
+	font-size: 18px;
+	color: #ffffff;
+	text-align: center;
+	border-radius: 4px;
+	background-color: #ff9713;
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	display:box;
+	box-pack:center;
+	box-align:center;
+}
+.index-page .password .group .button {
+	float: left;
+	width: 90px;
+	height: 36px;
+	line-height: 36px;
+	margin-left: 16px;
+	padding: 0;
+	font-size: 14px;
+	color: #ffffff;
+	text-align: center;
+	background-color: #ff9713;
+	border-radius: 4px;
+}
+.index-page .password .group .button[disabled] {
+	background-color: #cccccc;
+}
+.index-page .button-password[disabled] {
+	background-color: #cccccc;
+}

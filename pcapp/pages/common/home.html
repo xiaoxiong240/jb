@@ -1,0 +1,28 @@
+<div class="home-page">
+	<div class="header">
+		<div class="content">
+			<img src="public/images/logo2.png" class="pull-left" />
+			<div class="title pull-left">桔瓣，智能化云仓储物流平台</div>
+			<a class="pull-right exit" ng-click="exit()">退出</a>
+			<div class="pull-right user">尊敬的{{name}}，欢迎您</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<div class="body">
+		<div class="body-outer">
+			<div class="body-inner">
+				<div class="sider">
+					<accordion close-others="false">
+						<accordion-group ng-repeat="sider in siders" is-open="sider.status">
+							<accordion-heading>
+								{{sider.name}}<span class="triangle" ng-class="{'triangle-top' : !sider.status, 'triangle-buttom': sider.status}"></span>
+							</accordion-heading>
+							<div class="item" ng-repeat="item in sider.menus" ng-class="{'active': siderStatus === item.url}" ng-click="toPage(item.url)">{{item.name}}</div>
+						</accordion-group>
+					</accordion>
+				</div>
+				<div class="content" data-ui-view=""></div>
+			</div>
+		</div>
+	</div>
+</div>
